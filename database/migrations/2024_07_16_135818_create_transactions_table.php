@@ -11,12 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('partners', function (Blueprint $table) {
+        Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
 
-            $table->unsignedInteger('salary_percent');
+            $table->string('month');
+            $table->decimal('value', 10, 2);
+            $table->unsignedInteger('day');
+            $table->unsignedInteger('number_month');
+            $table->unsignedInteger('year');
+            $table->enum('type', ['entry', 'expense']);
+
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('partners');
+        Schema::dropIfExists('transactions');
     }
 };

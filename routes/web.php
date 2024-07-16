@@ -9,9 +9,8 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
 
-Route::get('/', function () {
-    return view('auth.login');
-});
+Route::get('/', [\App\Http\Controllers\ProjectionController::class, 'index'])->name('home');
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     // Dashboard

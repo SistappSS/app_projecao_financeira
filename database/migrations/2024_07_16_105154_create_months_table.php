@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('states', function (Blueprint $table) {
+        Schema::create('months', function (Blueprint $table) {
             $table->id();
 
-            $table->string('uf');
-            $table->string('state');
+            $table->string('week_day');
+            $table->string('month');
+
+            $table->unsignedInteger('number_day');
+            $table->unsignedInteger('number_month');
+            $table->unsignedInteger('year');
 
             $table->timestamps();
         });
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('states');
+        Schema::dropIfExists('months');
     }
 };

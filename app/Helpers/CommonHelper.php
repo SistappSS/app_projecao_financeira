@@ -64,7 +64,7 @@ function decimalPrice($value) {
 function brlPrice($value) {
     $value = str_replace('.', ',', $value);
 
-    $value = "R$ {$value}";
+    $value = "R$ " . number_format($value, 2);
     return $value;
 }
 
