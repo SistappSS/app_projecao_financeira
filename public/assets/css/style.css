@@ -1,0 +1,36 @@
+/* Table */
+
+.table td, .table th {
+    border: none !important;
+    padding: 1.75rem;
+}
+
+table {
+    align-items: center;
+}
+
+table td {
+    align-content: center !important;
+}
+
+table {
+    border-collapse: separate !important;
+}
+
+.dataTables_info {
+    text-align: center;
+}
+
+.dataTables_filter {
+    display: none;
+}
+
+.btn-group .dropdown-item {
+    cursor: pointer !important;
+}
+
+
+.form-control:disabled, .form-control[readonly], .select2-container--bootstrap.select2-container--disabled .select2-selection,.select2-container--bootstrap.select2-container--disabled .select2-selection--multiple .select2-selection__choice {
+    background-color: transparent !important;
+}
+
